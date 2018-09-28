@@ -6,7 +6,7 @@ import RPi.GPIO as GPIO
 def start_advertising():
         print("STARTING ADVERTISEMENT")
         BLUETOOTH_ENABLE_CMD = "sudo hciconfig hci0 up".
-        BLUETOOTH_ADVERTISING_MODE_CMD = "sudo hciconfig
+        BLUETOOTH_ADVERTISING_MODE_CMD = "sudo hcitool -i hci0 cmd 0x08 0x0008 1c 02 01 06 03 03 aa fe 14 16 aa fe 10 00 03 62 69 74 2e 6c 79 2f 32 4f 6a 6d 68 4b 6f 00 00 00"
         BLUETOOTH_ADVERTISING_DATA_CMD = "sudo hcitool -00 00".split(" ")
         enable_proc = subprocess.Popen(BLUETOOTH_ENABLE_
         enable_proc.wait()
